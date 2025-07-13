@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laser Ops - Édition Elite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menu">
+        <h1>Laser Ops - Édition Elite</h1>
+        <button id="new-game">Nouvelle Partie</button>
+        <button id="resume-game" style="display: none;">Reprendre</button>
+        <button id="settings">Paramètres</button>
+        <button id="share-score">Partager Score</button>
+        <button id="quit">Quitter</button>
+        <div id="leaderboard">
+            <h2>Classement</h2>
+            <ul id="leaderboard-list"></ul>
+        </div>
+        <div id="settings-panel" style="display: none;">
+            <h2>Paramètres</h2>
+            <label>Sensibilité: <input type="range" id="sensitivity" min="0.1" max="2" step="0.1" value="1"></label>
+            <label>Volume: <input type="range" id="volume" min="0" max="1" step="0.1" value="1"></label>
+            <button id="save-settings">Sauvegarder</button>
+        </div>
+    </div>
+    <div id="game-ui" style="display: none;">
+        <div id="health-bar">
+            <div id="health"></div>
+        </div>
+        <div id="score">0</div>
+        <div id="players-panel"></div>
+        <div id="touch-controls" class="touch-controls">
+            <div id="joystick"></div>
+            <div id="fire-button"></div>
+        </div>
+        <div id="level-up" style="display: none;">Niveau Débloqué !</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.module.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cannon@0.6.2/build/cannon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pathfinding@0.12.0/dist/pathfinding-browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io@4.7.5/client-dist/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/postprocessing/RenderPass.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.167.0/examples/jsm/postprocessing/UnrealBloomPass.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

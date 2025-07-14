@@ -26,7 +26,7 @@ class GameEngine {
         this.ui = {};
         this.pathfindingGrid = new PF.Grid(20, 20);
         this.controls = { forward: false, backward: false, left: false, right: false, jump: false, shoot: false };
-        this.socket = { connected: false, emit: () => {}, on: () => {} }; // Mode solo par défaut
+        this.socket = io('https://laser-ops-server.onrender.com', { transports: ['websocket'], upgrade: false }); // Mode solo par défaut
         this.init();
     }
 
